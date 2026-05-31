@@ -1,0 +1,19 @@
+{
+  "name": "awsm-firefox-container",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Firefox extension that opens URLs inside Multi-Account Containers via the ext+container: protocol",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AleG03/awsm-firefox-container.git"
+  },
+  "license": "MPL-2.0",
+  "scripts": {
+    "lint": "web-ext lint",
+    "build": "web-ext build --overwrite-dest",
+    "start": "web-ext run"
+  },
+  "devDependencies": {
+    "web-ext": "^8.0.0"
+  }
+}

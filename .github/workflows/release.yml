@@ -1,0 +1,27 @@
+name: Release to AMO
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Sign and submit to AMO
+        run: npx web-ext sign --channel=listed
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+      - name: Upload XPI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: xpi
+          path: web-ext-artifacts/*.xpi
