@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "AWSM Container Opener",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Opens URLs inside Firefox Multi-Account Containers via the ext+container: protocol. Built as part of the awsm project.",
+    "description": "Description of the extension."
+  }
+}

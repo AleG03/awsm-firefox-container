@@ -1,0 +1,45 @@
+<!--
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at https://mozilla.org/MPL/2.0/.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AWSM Container Opener - Options</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 1.5rem; max-width: 640px; }
+      h1 { font-size: 1.25rem; margin-top: 0; }
+      label { display: block; margin-top: 1rem; }
+      .hint { color: #666; font-size: 0.85rem; margin-top: 0.25rem; }
+      .status { margin-top: 1rem; color: #2a7a2a; }
+    </style>
+  </head>
+  <body>
+    <h1>AWSM Container Opener</h1>
+
+    <p>
+      This extension is built and maintained as part of the
+      <a href="https://github.com/AleG03/awsm-firefox-container" target="_blank" rel="noopener">awsm</a>
+      project. It handles <code>ext+container:</code> links by opening them
+      inside the matching Firefox Multi-Account Container, creating the
+      container on first use.
+    </p>
+
+    <label>
+      <input type="checkbox" id="honorUrlColorIcon" />
+      Honor <code>color</code> / <code>icon</code> query parameters from the URL
+      <div class="hint">
+        Off (default): every container gets a deterministic color and icon
+        derived from its name, so the same profile always looks the same.
+        On: if the URL specifies a valid color/icon, use it the first time a
+        container is created. Existing containers are never re-colored.
+      </div>
+    </label>
+
+    <div id="status" class="status" hidden>Saved.</div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
